@@ -1,6 +1,6 @@
 {
-  "homepage": "https://uzmakh.github.io/frontend-mentor-challenges/ReactJs/github-user-search-app/github-userlookout",
-  "name": "github-userlookout",
+  "homepage": "https://uzmakh.github.io/githubUserSearch",
+  "name": "github-user-search",
   "private": true,
   "version": "0.0.0",
   "type": "module",
