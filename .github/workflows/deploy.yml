@@ -38,11 +38,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./gituhb-user-lookout
+        working-directory: ./gituhbUserSearch
 
       - name: Build
         run: npm run build
-        working-directory: ./gituhb-userlookout
+        working-directory: ./gituhUserSearch
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
