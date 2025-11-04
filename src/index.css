@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Mono", monospace, "sans-serif";
+  --color-blue-500: "#0079FF";
+  --color-hover-blue: "#60ABFF";
+  --color-gray-500: "#4B6A9B";
+  --color-gray-300: "#697C9A";
+  --color-gray-200: "#90A4D4";
+  --color-gray-100: #f6f8ff;
+  --color-gray-000: #ffffff;
+  --color-red-500: #f74646;
+  --color-black-900: #141d2f;
+  --color-black-800: #1e2a47;
+  --color-black-700: #2b3442;
+  --sm-font: [ "13px", "20px"];
+  --base-font: [ "15px", "25px"];
+  --lg-font: [ "16px", "24px"];
+  --xl-font: [ "22px", "33px"];
+  --xxl-font: [ "26px", "38px"];
+}
+
+@layer base {
+  html {
+    font-family: "Space Mono", monospace;
+  }
+
+  h1 {
+    @apply font-bold text-black-800 text-2xl sm:text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  html.dark {
+    @apply bg-black-900 text-gray-100;
+
+    h1 {
+      @apply text-gray-100;
+    }
+
+    input {
+      @apply bg-black-800;
+    }
+
+    .search-bar,
+    .user-info {
+      @apply bg-black-800;
+    }
+
+    .stats {
+      @apply bg-black-900;
+    }
+
+    .bottom-icon {
+      @apply filter brightness-0 invert;
+    }
+  }
+
+  html:not(.dark) {
+    @apply bg-gray-100 text-black-700;
+  }
+}
+
+@utility btn {
+  @apply bg-blue-600 text-white text-[12px] py-2 px-3 sm:py-4 sm:px-6 sm:text-[18px] rounded-md font-bold text-xl hover:bg-blue-300 cursor-pointer;
+}

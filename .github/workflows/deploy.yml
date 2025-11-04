@@ -1,0 +1,51 @@
+name: Deploy Project Folder to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "project-folder/**" # Only trigger when project-folder changes
+      - ".github/workflows/deploy-github-user-lookout.yml"
+
+        # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+    # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: lts/*
+          cache: "npm"
+          cache-dependency-path: gituhb-user-lookout/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./gituhb-user-lookout
+
+      - name: Build
+        run: npm run build
+        working-directory: ./gituhb-userlookout
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: github-userlookout/build
