@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
-          cache-dependency-path: githubbUserSearch/package-lock.json
+          cache-dependency-path: githubUserSearch/package-lock.json
 
       - name: Install dependencies
         run: npm install
