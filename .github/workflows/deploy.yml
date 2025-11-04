@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - "project-folder/**" # Only trigger when project-folder changes
-      - ".github/workflows/deploy-github-user-lookout.yml"
+      - ".github/workflows/deploy-githubUserSearch.yml"
 
         # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
-          cache-dependency-path: gituhb-user-lookout/package-lock.json
+          cache-dependency-path: gituhbUserSearch/package-lock.json
 
       - name: Install dependencies
         run: npm install
@@ -48,4 +48,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: github-userlookout/build
+          publish_dir: githubUserSearch/build
