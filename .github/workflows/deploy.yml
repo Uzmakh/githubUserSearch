@@ -34,15 +34,15 @@ jobs:
         with:
           node-version: lts/*
           cache: "npm"
-          cache-dependency-path: gituhbUserSearch/package-lock.json
+          cache-dependency-path: githubbUserSearch/package-lock.json
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./gituhbUserSearch
+        working-directory: ./githubUserSearch
 
       - name: Build
         run: npm run build
-        working-directory: ./gituhUserSearch
+        working-directory: ./githubUserSearch
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
