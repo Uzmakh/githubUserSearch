@@ -20,17 +20,27 @@
   --xxl-font: [ "26px", "38px"];
 }
 
+@layer utilities {
+  .container {
+    @apply md:max-w-[750px] md:mx-auto;
+  }
+}
+
 @layer base {
   html {
     font-family: "Space Mono", monospace;
   }
 
+  body {
+    @apply container mx-auto px-4 md:px-20 my-6;
+  }
+
   h1 {
-    @apply font-bold text-black-800 text-2xl sm:text-3xl;
+    @apply font-bold text-2xl sm:text-3xl;
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-2xl font-bold;
   }
 
   html.dark {
@@ -40,10 +50,7 @@
       @apply text-gray-100;
     }
 
-    input {
-      @apply bg-black-800;
-    }
-
+    input,
     .search-bar,
     .user-info {
       @apply bg-black-800;
@@ -60,6 +67,21 @@
 
   html:not(.dark) {
     @apply bg-gray-100 text-black-700;
+
+    h1,
+    h3 {
+      @apply text-black-800;
+    }
+
+    input,
+    .search-bar,
+    .user-info {
+      @apply bg-gray-000;
+    }
+
+    .stats {
+      @apply bg-gray-100;
+    }
   }
 }
 
