@@ -81,7 +81,7 @@ we will have our combination of Context API and Reducer. We will use them togeth
 Reducer helps us to state manipulation
 and the contect Api helps us to access data to other components,as we need to access later and display it in the user Info section that is our third section of the design.
 
-in searchUser function, we can remove noe these separate states,
+in searchUser function, we can remove now these separate states,
 const [username, setUserName] = useState("");
 const [error, setError] = useState("");
 const [loading, setLoading] = useState(false);
@@ -144,3 +144,8 @@ Timeline:
 01:19:25 section 7: unit test user search Context
 01:28:41 unit test User Search component
 01:33:57 section 8: Build user details component
+
+## Acknowledgments
+
+- I took help building this app from YT channel: coding with LULU
+- https://www.youtube.com/watch?v=d4ttdFCZJZQ
